@@ -29,6 +29,8 @@ app.use('/users', users);
 app.use('/inventory', inventory)
 app.use('/purchases', purchases);
 
+
+
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -46,5 +48,7 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+app.listen(process.env.PORT||3000, function(){
 
+});
 module.exports = app;
